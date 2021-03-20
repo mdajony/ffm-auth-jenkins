@@ -2,6 +2,7 @@ pipeline {
   agent any
 
   stages {
+    stage('build') {
     steps {
 	echo "yo..started building.."
 	ls
@@ -12,6 +13,6 @@ pipeline {
 	'''
 	echo "build completed..."
     }	
-
+   }
   }
 }
