@@ -15,10 +15,13 @@ pipeline {
     }	
    }
     stage('deploy') {
+	steps {
 	echo "starting deployment..."
 	sh'''
 	sshpass -p hello ssh -o StrictHostKeyChecking=no root@3.0.100.56 "docker-compose down && docker-compose pull auth && docker-compose up -d"
 	'''
+
+    }
   }
 
   }
